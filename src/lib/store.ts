@@ -1,5 +1,5 @@
 import { derived, writable } from 'svelte/store';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from '@lukeed/uuid';
 
 import type { AddTodo, Todo } from '../types';
 
