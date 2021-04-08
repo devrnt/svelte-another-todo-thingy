@@ -58,6 +58,12 @@
     background: var(--grey600);
   }
 
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
   @media (min-width: 480px) {
     h1 {
       max-width: none;

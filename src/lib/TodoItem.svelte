@@ -2,7 +2,7 @@
   import { getContext } from 'svelte';
 
   import { contextKey } from './store';
-  import type { Todo } from 'src/types';
+  import type { Todo } from '../types';
   import type { Store } from './store';
 
   export let todo: Todo;
