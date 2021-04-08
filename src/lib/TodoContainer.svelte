@@ -19,5 +19,7 @@
 <style>
   section {
     margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 </style>
