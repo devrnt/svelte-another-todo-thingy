@@ -3,11 +3,12 @@
   import { contextKey } from './store';
   import type { Store } from './store';
 
-  const { reset, amount } = getContext<Store>(contextKey);
+  const { reset, amount, amountCompleted } = getContext<Store>(contextKey);
 </script>
 
 {#if $amount > 0}
   <div>
+    <span>{$amountCompleted}/{$amount} completed</span>
     <button on:click={reset}>Reset</button>
   </div>
 {/if}
@@ -15,10 +16,18 @@
 <style>
   div {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0 2rem;
   }
 
+  span {
+    color: var(--secondary300);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
   button {
-    margin-top: 1rem;
+    background: var(--accent);
+    color: var(--primary);
   }
 </style>

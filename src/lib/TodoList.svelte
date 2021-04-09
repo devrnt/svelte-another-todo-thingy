@@ -16,37 +16,28 @@
       {/each}
     </ul>
   {:else}
-    <p>You're fine no todo's! 📝</p>
+    <p>You're all settled up! 📝</p>
   {/if}
 </div>
 
 <style>
-  div {
-    padding: 1rem 2rem;
-    border: 1px solid var(--grey);
-    border-radius: 3px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  div.done {
-    background: rgb(234, 255, 234);
-    border: 1px solid rgb(0, 219, 48);
-  }
-
   ul {
-    list-style: none;
-    display: flex;
-    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
   }
 
-  h3,
+  .done {
+    background: var(--success);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
   p {
     margin: 0.25rem 0;
-    text-align: start;
-  }
-
-  h3 {
-    font-weight: 600;
+    text-align: center;
   }
 </style>

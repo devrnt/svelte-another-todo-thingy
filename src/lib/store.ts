@@ -11,7 +11,7 @@ export const createTodoStore = () => {
   const add = (todo: AddTodo) => {
     const id = uuid();
 
-    todos.update((todos) => [...todos, { id, ...todo }]);
+    todos.update((todos) => [...todos, { id, isCompleted: false, ...todo }]);
   };
 
   const remove = (id: string) => {
@@ -22,7 +22,27 @@ export const createTodoStore = () => {
     todos.set([]);
   };
 
+  const toggle = (id: string) => {
+    todos.update((todos) => {
+      return todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            isCompleted: !todo.isCompleted,
+          };
+        }
+
+        return todo;
+      });
+    });
+  };
+
   const amount = derived(todos, ($todos) => $todos.length);
+
+  const amountCompleted = derived(
+    todos,
+    ($todos) => $todos.filter((todo) => todo.isCompleted).length,
+  );
 
   return {
     todos,
@@ -30,6 +50,8 @@ export const createTodoStore = () => {
     remove,
     reset,
     amount,
+    toggle,
+    amountCompleted,
   };
 };
 
