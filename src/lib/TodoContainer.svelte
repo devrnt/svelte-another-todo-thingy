@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte';
+
   import { contextKey, createTodoStore } from './store';
 
   import TodoList from './TodoList.svelte';
