@@ -27,6 +27,8 @@ body {
   font-family: var(--font-family);
   background: var(--primary600);
   color: var(--secondary);
+  text-rendering: optimizeLegibility;
+  font-smooth: antialiased;
 }
 
 main {
