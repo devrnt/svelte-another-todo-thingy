@@ -1,34 +1,31 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import { flip } from 'svelte/animate';
   import { quartOut } from 'svelte/easing';
   import { scale } from 'svelte/transition';
 
   import { contextKey } from './store';
-  import createCrossFadeAnimation from './crossfade';
   import type { Store } from './store';
 
   import TodoItem from './TodoItem.svelte';
 
   const { todos, amount } = getContext<Store>(contextKey);
-
-  const [send, receive] = createCrossFadeAnimation();
 </script>
 
 {#if $amount > 0}
   <ul>
     {#each $todos as todo (todo.id)}
       <article
-        in:receive={{ key: todo.id }}
-        animate:flip
-        out:send={{ key: todo.id }}
+        in:scale={{ easing: quartOut, duration: 300 }}
+        out:scale={{ easing: quartOut, duration: 300 }}
       >
         <TodoItem {todo} />
       </article>
     {/each}
   </ul>
 {:else}
-  <p in:scale={{ easing: quartOut, delay: 300 }}>You're all settled up! 📝</p>
+  <p in:scale={{ easing: quartOut, delay: 250, duration: 300 }}>
+    You're all settled up! 📝
+  </p>
 {/if}
 
 <style>
@@ -52,7 +49,8 @@
     width: 100%;
   }
 
-  ul, p {
+  ul,
+  p {
     grid-area: 1/1/2/2;
   }
 </style>
