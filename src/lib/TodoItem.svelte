@@ -28,21 +28,17 @@
 
 <style>
   li {
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-    display: flex;
-    background: #ffffff;
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 19px 12px;
-    list-style: none;
-    display: flex;
     padding: 1rem 2rem;
     overflow: hidden;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.65rem;
+    gap: 1rem;
+    align-items: center;
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 19px 12px;
+  
   }
 
   li::before {
@@ -76,11 +72,13 @@
     margin: 0.25rem 0;
     text-align: start;
     color: var(--secondary300);
+    word-break: break-word;
   }
 
   h3 {
     font-weight: 600;
     color: var(--secondary);
+    line-height: 1.3;
   }
 
   button {
