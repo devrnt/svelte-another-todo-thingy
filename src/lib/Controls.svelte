@@ -1,5 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
+  import { fly } from 'svelte/transition';
+
   import { contextKey } from './store';
   import type { Store } from './store';
 
@@ -7,7 +9,7 @@
 </script>
 
 {#if $amount > 0}
-  <div>
+  <div out:fly={{ y: -20, duration: 300 }}>
     <span>{$amountCompleted}/{$amount} completed</span>
     <button on:click={reset}>Reset</button>
   </div>
@@ -18,7 +20,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem 0 2rem;
   }
 
   span {

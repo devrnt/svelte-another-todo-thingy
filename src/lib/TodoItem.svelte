@@ -35,10 +35,9 @@
     grid-template-columns: 1fr 1.65rem;
     gap: 1rem;
     align-items: center;
-    background: #ffffff;
+    background: var(--primary);
     border-radius: var(--border-radius);
     box-shadow: rgba(0, 0, 0, 0.02) 0px 19px 12px;
-  
   }
 
   li::before {
@@ -46,7 +45,7 @@
     content: '';
     height: 100%;
     top: 50%;
-    left: -10%;
+    left: -5%;
     width: 10px;
     background: var(--success);
     transform: translateY(-50%);

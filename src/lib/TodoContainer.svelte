@@ -19,6 +19,7 @@
 
 <style>
   section {
-    margin-bottom: 1rem;
+    display: grid;
+    gap: 1rem;
   }
 </style>
