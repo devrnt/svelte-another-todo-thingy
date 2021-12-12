@@ -2,6 +2,8 @@
 
 Just exploring Svelte, stores and contexts with a cliché todo app. [Site](https://svelte-another-todo-thingy.vercel.app/)
 
+27.4kB shipped over the wire, 43.3kB loaded
+
 **Findings**
 
 - Stores are just awesome, such a useful/powerful out of the box approach for state management
